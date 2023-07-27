@@ -1,5 +1,16 @@
-dy {
+video{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  filter:opacity(60%);
+  transform: translateX(10%) translateY(40%);
+  z-index:-1;
+}
+body {
   font-family: Roboto, arial, sans-serif;
+  color:#000;
 }
 h1 {
   color: rgb(22, 22, 22);
@@ -20,18 +31,36 @@ li {
   line-height: 1;
   list-style: none;
 }
-
+.weather-app-wrapper{
+  max-width: 600 px;
+  margin: 30px auto;
+}
 .weather-app {
-  border: 1px solid #dadde1;
+  border: 5px solid #dadde1;
   padding: 15px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 3px 3px 2px 3px gray;
+  mix-blend-mode: hard-light;
   background: linear-gradient(
-    110.7deg,
-    rgb(9, 154, 151) 6.3%,
-    rgb(21, 205, 168) 90.6%
+    to top, 
+    #3b41c5 0%, 
+    #a981bb 49%, 
+    #3b41c5 100%
   );
+}
+.weather-app::after {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(transparent);
+  pointer-events: none;
 }
 .weather-icon {
   height: 64px;
@@ -49,6 +78,7 @@ li {
 .units {
   position: relative;
   top: -18px;
+  font-size: 16px;
 }
 .search-form {
   margin-bottom: 20px;
@@ -70,4 +100,8 @@ li {
 
 .weather-forecast-temperatures {
   font-size: 13px;
+}
+.line {
+  border-bottom: 4px solid rgb(56, 75, 94);
+  display: block;
 }
